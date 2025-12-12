@@ -3,11 +3,15 @@ import sys
 
 def get_input() -> str:
     """
-        check argeument amount.
-        if it's 0, start to get get unput on stdin.
+    Gets input string either from command-line argument or stdin.
 
-        Returns:
-            str: imput stracture value
+    Raises:
+        AssertionError: If more than one argument is provided.
+        AssertionError: If reading from stdin fails.
+        AssertionError: If the argument is missing from stdin.
+
+    Returns:
+        str: The processed input string.
     """
     args = sys.argv
 
@@ -33,8 +37,13 @@ def get_input() -> str:
 
 def count_type(text: str):
     """
-        get stracture and
-        count the type of char in it.
+    Counts and prints the number of different character types in the input.
+
+    Character types counted are: uppercase, lowercase, punctuation,
+                                 space, and digit.
+
+    Args:
+        text (str): The string whose characters are to be counted.
     """
 
     counts = {
@@ -66,6 +75,10 @@ def count_type(text: str):
 
 
 def main():
+    """
+    Main function to handle input,
+    count character types, and manage exceptions.
+    """
     try:
         input_str = get_input()
         count_type(input_str)
