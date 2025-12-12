@@ -43,7 +43,7 @@ def encode_to_morse(text: str) -> str:
 def main():
     """
     The main entry point of the program.
-    It handles command-line arguments, calls the encoding function, 
+    It handles command-line arguments, calls the encoding function,
     and prints the result, including error handling.
     """
     args = sys.argv
