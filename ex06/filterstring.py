@@ -1,15 +1,22 @@
 import sys
 
 
-is_digit_lam = lambda s: s.isdigit()
-
-
-def check_arg(args:list) -> tuple:
+def check_arg(args: list) -> tuple:
     """
-        check command line
-        if it's valied, return contents
+    Checks command-line arguments for validity.
 
-        Return: tuple (text, num)
+    Validates that exactly two arguments are provided and that they are of the
+    correct type (string S and integer N).
+
+    Args:
+        args (list): The list of command-line arguments.
+
+    Raises:
+        AssertionError: If the number of arguments is not 2.
+        AssertionError: If the argument types are incorrect.
+
+    Returns:
+        tuple: A tuple containing the valid string and the number  as strings.
     """
     if len(args) != 3:
         raise AssertionError("the arguments are bad")
@@ -17,16 +24,24 @@ def check_arg(args:list) -> tuple:
     text_s = args[1]
     num_s = args[2]
 
-    if not text_s.isalpha() or not is_digit_lam(num_s):
+    if not text_s.isalpha() or not num_s.isdigit():
         raise AssertionError("the arguments are bad")
     return text_s, num_s
 
 
 def filter_string(text_s: str, num_s: str) -> list:
     """
-    filter string by number and return result
+    Filters a string and returns words longer than a specified number.
 
-    Return: list
+    Splits the input string into words and uses list comprehension to return
+    a list of words whose length is strictly greater than the integer N.
+
+    Args:
+        text_s (str): The input string (S).
+        num_s (str): The number (N) as a string, defining the minimum length.
+
+    Returns:
+        list: A list of words from S whose length is > N.
     """
     n = int(num_s)
     str_list = text_s.split(" ")
@@ -35,6 +50,13 @@ def filter_string(text_s: str, num_s: str) -> list:
 
 
 def main():
+    """
+    Main function to process command-line arguments
+    and run the filtering logic.
+
+    Handles argument validation and filtering, outputting the result or
+    printing an AssertionError message if validation fails.
+    """
     args = sys.argv
     try:
         text_s, num_s = check_arg(args)
