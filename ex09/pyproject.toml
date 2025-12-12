@@ -7,8 +7,9 @@ name = "ft_package"
 version = "0.0.1" 
 description = "A sample test package"
 readme = "README.md"
-author = "yushimom"
-author-email = "yushimom@42.fr"
+authors = [
+    {name = "yushimom", email = "yushimom@42.fr"},
+]
 license = {file = "LICENSE"}
 requires-python = ">=3.8"
 keywords = ["42", "package", "count", "fun"]
@@ -17,7 +18,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-Homepage = "https://github.com/eagle/ft_package"
+urls = {Homepage = "https://github.com/eagle/ft_package"}
 
 [tool.setuptools.packages]
 find = {}

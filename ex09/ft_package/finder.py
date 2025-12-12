@@ -1,4 +1,4 @@
-def how_many_times(lst, item):
+def count_in_list(lst, item):
     """
     Counts the occurrences of an item in a list using a more playful name.
 
